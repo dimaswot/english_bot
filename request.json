@@ -1,0 +1,58 @@
+[
+	{
+		"Theme": "Crime",
+		"Description": " Мама ама кримминал",
+		"Number": 1,
+		"Word": "Сhivapcici",
+		"List": [ "Орех", "Соль", "Дверь", "Чивапчичи" ],
+		"Translate": "Чивапчичи",
+		"Example": "The chivapcici were delicious"
+	},
+	{
+		"Theme": "Crime",
+		"Description": " Мама ама кримминал",
+		"Number": 2,
+		"Word": "Knife",
+		"List": [ "Орех", "Соль", "Нож", "Чивапчичи" ],
+		"Translate": "Нож",
+		"Example": "There was a knife next to the body"
+	},
+	{
+		"Theme": "Crime",
+		"Description": " Мама ама кримминал",
+		"Number": 3,
+		"Word": "Body",
+		"List": [ "Картошка", "Тело", "Самолет", "Чивапчичи" ],
+		"Translate": "Тело",
+		"Example": "A naked body lay on the floor"
+	},
+	{
+		"Theme": "Kitchen",
+		"Description": "Все о кухне",
+		"Number": 1,
+		"Word": "Table",
+		"List": [ "Картошка", "Стол", "Самолет", "Вертолет" ],
+		"Translate": "Стол",
+		"Example": "The table stood in the center of the kitchen"
+	},
+	{
+		"Theme": "Kitchen",
+		"Description": "Все о кухне",
+		"Number": 2,
+		"Word": "Plate",
+		"List": [ "Картошка", "Тарелка", "Самолет", "Теннис" ],
+		"Translate": "Тарелка",
+		"Example": "The plate broke"
+	},
+	{
+		"Theme": "Kitchen",
+		"Description": "Все о кухне",
+		"Number": 3,
+		"Word": "Fork",
+		"List": [ "Вилка", "Ложка", "Табуретка", "Вертолет" ],
+		"Translate": "Вилка",
+		"Example": "The fork was stained with ketchup"
+	}
+
+
+]

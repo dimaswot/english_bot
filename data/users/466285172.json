@@ -1,0 +1,16 @@
+{
+    "user_id": 466285172,
+    "settings": {
+        "theme": "Crime",
+        "word_number": 1,
+        "count_words": 5,
+        "sheduller_off": 0
+    },
+    "statistics": {
+        "themes": 0,
+        "count_words": 0,
+        "last_words": null,
+        "last_repetition": null,
+        "words_list": {}
+    }
+}
