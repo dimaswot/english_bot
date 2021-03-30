@@ -10,7 +10,7 @@ from user import User
 from datetime import timedelta
 
 token = "1693338559:AAFniq64i8lKTKVWjGdq9_9lDki1W4SK3X8"
-url = "https://9c736311012c.ngrok.io"
+url = "https://english1bot.herokuapp.com/"
 CHAT_ID = 742632933
 
 app = Flask(__name__)
