@@ -27,5 +27,3 @@ def set_webhook():
         f'{url}/{token}'
     )
     return 'ok'
-
-
