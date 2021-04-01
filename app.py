@@ -16,7 +16,7 @@ CHAT_ID = 742632933
 app = Flask(__name__)
 bot = TelBot(token)
 
-@app.route("/{token}", methods=["GET", "POST"])
+@app.route(f"/{token}", methods=["GET", "POST"])
 def receive_update():
     bot.update(request.json)
     return {"ok": True}
