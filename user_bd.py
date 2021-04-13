@@ -21,6 +21,7 @@ class User(base):
     __tablename__ = 'user'
     id = Column(Integer, primary_key=True, autoincrement=True)
     first_name = Column(String)
+    first_name = Column(String)
     last_repetition = Column(DateTime) #последнее повторение
     theme_id = Column(String, default=1) # тема
     repeat_word = Column(Integer, default=5) # кол-во повторений слов
