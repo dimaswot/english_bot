@@ -1,12 +1,15 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
 from menu import start
-from bot import Updater
+from user_bd import Session, User
+from app import bot
 
 sched = BlockingScheduler()
-update = Updater()
 
 @sched.scheduled_job('interval', seconds=30)
 def print_interval():
-    start.shed(update)
+    session = Session()
+    users = session.query(User).all()
+    for user in users:
+        start.shed(bot, user)
 
 sched.start()
