@@ -9,8 +9,14 @@ from bot import TelBot
 from datetime import timedelta
 import os
 
+<<<<<<< HEAD
 token = "1794885741:AAGBtWvALZjTzw1WDefzwSCie9ScpHmdHL0" #os.getenv("TOKEN") #
 url = "https://e429ff1617fe.ngrok.io"
+=======
+token = "1693338559:AAFniq64i8lKTKVWjGdq9_9lDki1W4SK3X8"
+url = "https://english1bot.herokuapp.com/"
+CHAT_ID = 742632933
+>>>>>>> ad061af1c22163f96e28023a8e80582304a5268f
 
 app = Flask(__name__)
 bot = TelBot(token)
@@ -26,5 +32,3 @@ def set_webhook():
         f'{url}/{token}'
     )
     return 'ok'
-
-
