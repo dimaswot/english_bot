@@ -9,7 +9,7 @@ from bot import TelBot
 from datetime import timedelta
 import os
 
-<<<<<<< HEAD
+
 token =  os.getenv("TOKEN") #"1794885741:AAGBtWvALZjTzw1WDefzwSCie9ScpHmdHL0"
 url = "https://english1bot.herokuapp.com/"
 
