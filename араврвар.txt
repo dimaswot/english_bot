@@ -1,8 +1,0 @@
-token =    1693338559:AAFniq64i8lKTKVWjGdq9_9lDki1W4SK3X8
-
-https://api.telegram.org/bot1693338559:AAFniq64i8lKTKVWjGdq9_9lDki1W4SK3X8/setWebhook?url=https://9708aba76cac.ngrok.io 
-
-
-url=https://42311b7a3840.ngrok.io 
-
-curl --location --request POST https://api.telegram.org/bot1693338559:AAFniq64i8lKTKVWjGdq9_9lDki1W4SK3X8/setWebhook' --header 'Content-Type: application/json' --data-raw '{ "url": "https://67813392152b.nВgrok.io"}'

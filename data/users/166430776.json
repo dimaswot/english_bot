@@ -1,0 +1,24 @@
+{
+    "user_id": 166430776,
+    "first_name": "FatalError",
+    "settings": {
+        "theme": "Crime",
+        "word_number": 2,
+        "count_words": 5,
+        "sheduller_off": 0
+    },
+    "statistics": {
+        "themes": 0,
+        "count_words": 0,
+        "last_words": "Obama",
+        "last_repetition": "2021-04-05 18:30:49.459024",
+        "words_list": {
+            "Obama": 1,
+            "Knife": 0,
+            "Body": 0,
+            "Table": 0,
+            "Plate": 0,
+            "Fork": 0
+        }
+    }
+}

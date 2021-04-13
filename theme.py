@@ -36,3 +36,17 @@ class Words:
             if number == w["Number"] and theme == w["Theme"]:
                 return  w["Description"]
         return None
+
+    def add_words_list_null(self):
+        dict = {}
+        for w in self.words:
+            dict[w['Word']] = 0
+            print("="*20)
+            print(dict)
+        return dict
+
+    def get_example(self, word_number, theme):
+        for w in self.words:
+            if word_number == w["Number"] and theme == w["Theme"]:
+                return w["Example"]
+        return None

@@ -1,16 +1,24 @@
 {
     "user_id": 742632933,
+    "first_name": "\u0414\u043c\u0438\u0442\u0440\u0438\u0439",
     "settings": {
-        "theme": "Kitchen",
+        "theme": "Crime",
         "word_number": 3,
-        "count_words": 5,
+        "count_words": 3,
         "sheduller_off": 0
     },
     "statistics": {
         "themes": 0,
-        "count_words": 14,
-        "last_words": "Fork",
-        "last_repetition": "2021-03-30 12:39:39.608097",
-        "words_list": {}
+        "count_words": 0,
+        "last_words": "Body",
+        "last_repetition": "2021-04-05 18:21:34.604358",
+        "words_list": {
+            "Obama": 4,
+            "Knife": 3,
+            "Body": 3,
+            "Table": 0,
+            "Plate": 0,
+            "Fork": 0
+        }
     }
 }

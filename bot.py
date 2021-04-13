@@ -5,10 +5,6 @@ import menu.test
 import menu.settings
 import menu.statisctics
 import menu.start
-from user import User
-
-user = User()
-
 
 
 class TelBot:
@@ -34,7 +30,7 @@ class TelBot:
                 ],
                 states.TEST: [
                     CallbackQueryHandler(menu.start.menu, pattern=f'^{str(states.EXIT)}$'),
-                    CallbackQueryHandler(menu.test.test, pattern=f'\w+')
+                    CallbackQueryHandler(menu.test.test, pattern=f'@_\w+')
                 ],
                 states.STATISTICS: [
                     CallbackQueryHandler(menu.start.menu, pattern=f'^{str(states.STATISTICS)}$')
@@ -44,7 +40,7 @@ class TelBot:
                     CallbackQueryHandler(menu.start.menu, pattern=f'^{str(states.EXIT)}$'),
                     CallbackQueryHandler(menu.settings.theme, pattern=f'^{str(states.THEME)}$'),
                     CallbackQueryHandler(menu.settings.redact_kol_vo, pattern=f'^{str(states.REDACT_KOL_VO)}$'),
-                    CallbackQueryHandler(menu.settings.stop_sheduller, pattern=f'^{str(states.STOP_SCHEDULLER)}$')
+                    CallbackQueryHandler(menu.settings.test_count, pattern=f'^{str(states.STOP_SCHEDULLER)}$')
                 ],
                 states.THEME: [
                     CallbackQueryHandler(menu.settings.set_theme, pattern=f'\w+'),
@@ -53,7 +49,7 @@ class TelBot:
                     CallbackQueryHandler(menu.settings.set_kol_vo, pattern=f'\w+')
                 ],
                 states.STOP_SCHEDULLER:[
-                    CallbackQueryHandler(menu.settings.stop_sheduller_run, pattern=f'\w+'),
+                    CallbackQueryHandler(menu.settings.set_test_count, pattern=f'\w+'),
                 ]
             },
             fallbacks=[],

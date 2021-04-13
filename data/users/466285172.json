@@ -1,16 +1,24 @@
 {
     "user_id": 466285172,
+    "first_name": "Никита",
     "settings": {
-        "theme": "Crime",
+        "theme": "Kitchen",
         "word_number": 1,
-        "count_words": 5,
+        "count_words": 9,
         "sheduller_off": 0
     },
     "statistics": {
         "themes": 0,
         "count_words": 0,
-        "last_words": null,
-        "last_repetition": null,
-        "words_list": {}
+        "last_words": "Table",
+        "last_repetition": "2021-04-05 17:37:42.573815",
+        "words_list": {
+            "Obama": 3,
+            "Knife": 2,
+            "Body": 2,
+            "Table": 0,
+            "Plate": 2,
+            "Fork": 2
+        }
     }
 }

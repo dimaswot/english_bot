@@ -2,13 +2,13 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CallbackContext
 from menu import start
 from states import BEGIN, THEME, TEST, SETTINGS, REDACT_KOL_VO, STOP_SCHEDULLER, STATISTICS, EXIT
-from user import User, Settings, Statistics
+from user_bd import User, init_user, session, Word, Theme
 
 def settings(update: Update, context: CallbackContext):
     keyboard_markup = InlineKeyboardMarkup([
         [InlineKeyboardButton('Выбор темы', callback_data=str(THEME))],
         [InlineKeyboardButton('Изменение повторенией слов', callback_data=str(REDACT_KOL_VO))],
-        [InlineKeyboardButton('Запретить шедуллер', callback_data=str(STOP_SCHEDULLER))],
+        [InlineKeyboardButton('Выбрать количество слов в тесте', callback_data=str(STOP_SCHEDULLER))],
         [InlineKeyboardButton('Назад', callback_data=str(EXIT))],
     ])
     update.callback_query.message.edit_text('Настройки: ', reply_markup=keyboard_markup)
@@ -25,14 +25,14 @@ def redact_kol_vo(update: Update, context: CallbackContext):
     return REDACT_KOL_VO
 
 
-def stop_sheduller(update: Update, context: CallbackContext):
+def test_count(update: Update, context: CallbackContext):
     keyboard_markup = InlineKeyboardMarkup([
-        [InlineKeyboardButton('Да', callback_data= 'Да')],
-        [InlineKeyboardButton('Нет', callback_data='Нет')],
+        [InlineKeyboardButton('5', callback_data=5)],
+        [InlineKeyboardButton('10', callback_data=10)],
         [InlineKeyboardButton('Назад', callback_data=str(EXIT))],
 
     ])
-    update.callback_query.message.edit_text('Выключить шедуллер? (напоминание): ', reply_markup=keyboard_markup)
+    update.callback_query.message.edit_text('Выберите колиество вопросов в тесте? ', reply_markup=keyboard_markup)
     return STOP_SCHEDULLER
 
 
@@ -48,14 +48,8 @@ def theme(update: Update, context: CallbackContext):
 
 
 def set_theme(update: Update, context: CallbackContext):
-    user = User()
-    if not user.check_in_bd(update.callback_query.message.chat.id):
-        user.user_id = update.callback_query.message.chat_id
-        user.settings = Settings()
-        user.statistics = Statistics()
-        user.refresh()
-
-    user.settings.theme = update.callback_query.data
+    user = init_user(update.callback_query.message.chat_id)
+    user.theme = update.callback_query.data
     user.refresh()
     keyboard_markup = InlineKeyboardMarkup([
         [InlineKeyboardButton('Главное меню', callback_data=str(EXIT))],
@@ -63,17 +57,23 @@ def set_theme(update: Update, context: CallbackContext):
     update.callback_query.message.edit_text(f'Выбрана тема {update.callback_query.data}', reply_markup=keyboard_markup)
     return BEGIN
 
-def stop_sheduller_run(update: Update, context: CallbackContext):
+def set_test_count(update: Update, context: CallbackContext):
+    user = init_user(update.callback_query.message.chat_id)
     keyboard_markup = InlineKeyboardMarkup([
         [InlineKeyboardButton('Главное меню', callback_data=str(EXIT))],
     ])
-    update.callback_query.message.edit_text(f'Шедуллер выключен?  {update.callback_query.data}', reply_markup=keyboard_markup)
+    user.test_count = int(update.callback_query.data)
+    user.refresh()
+    update.callback_query.message.edit_text(f'Установлено количество вопросов в тесте:  {update.callback_query.data}', reply_markup=keyboard_markup)
     return BEGIN
 
 
 def set_kol_vo(update: Update, context: CallbackContext):
+    user = init_user(update.callback_query.message.chat_id)
     keyboard_markup = InlineKeyboardMarkup([
         [InlineKeyboardButton('Главное меню', callback_data=str(EXIT))],
     ])
+    user.count_words = int(update.callback_query.data)
+    user.refresh()
     update.callback_query.message.edit_text(f'Установлено количество {update.callback_query.data}: ', reply_markup=keyboard_markup)
     return BEGIN
