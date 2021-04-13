@@ -42,9 +42,9 @@ def menu(update: Update, context: CallbackContext):
     update.callback_query.message.edit_text('Выберите пункт меню', reply_markup=keyboard_markup)
     return BEGIN
 
-def shed(update:Update, context:CallbackContext):
+def shed(update, user:User):
     keyboard_markup = InlineKeyboardMarkup([
         [InlineKeyboardButton('Повторить', callback_data=str(REPIT))],
     ])
-    update.callback_query.message.reply_text('Думаю, тебе пора повторить', reply_markup=keyboard_markup)
+    update.send_message(user.id, 'Пора бы наверное и повторить', reply_markup=keyboard_markup)
     return BEGIN
