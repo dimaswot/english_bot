@@ -4,10 +4,11 @@ from datetime import datetime
 import json
 from states import BEGIN, THEME, TEST, SETTINGS, REDACT_KOL_VO, STOP_SCHEDULLER, STATISTICS
 from theme import Words
-from user_bd import User, init_user, session, Word, Theme, Statistics
+from user_bd import User, init_user, Session, Word, Theme, Statistics
 from typing import List
 
 def start(update: Update, context: CallbackContext):
+    session = Session()
     user = init_user(update.message.chat_id)
     user.first_name = update.message.chat.first_name
     user.refresh()
