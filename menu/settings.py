@@ -2,7 +2,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CallbackContext
 from menu import start
 from states import BEGIN, THEME, TEST, SETTINGS, REDACT_KOL_VO, STOP_SCHEDULLER, STATISTICS, EXIT
-from user_bd import User, init_user, session, Word, Theme
+from user_bd import User, init_user, Session, Word, Theme
 
 def settings(update: Update, context: CallbackContext):
     keyboard_markup = InlineKeyboardMarkup([
