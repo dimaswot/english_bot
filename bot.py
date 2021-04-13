@@ -50,6 +50,9 @@ class TelBot:
                 ],
                 states.STOP_SCHEDULLER:[
                     CallbackQueryHandler(menu.settings.set_test_count, pattern=f'\w+'),
+                ],
+                states.REPIT: [
+                    CallbackQueryHandler(menu.start.shed, pattern=f'^{str(states.EXIT)}$'),
                 ]
             },
             fallbacks=[],
