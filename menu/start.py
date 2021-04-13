@@ -11,6 +11,7 @@ def start(update: Update, context: CallbackContext):
     session = Session()
     user = init_user(update.message.chat_id)
     user.first_name = update.message.chat.first_name
+    user.telegram_id = update.message.chat.id
     user.refresh()
 
     session.query(Statistics).filter(Statistics.user_id == user.id).delete()
