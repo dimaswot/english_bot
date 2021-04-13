@@ -10,7 +10,7 @@ from datetime import timedelta
 import os
 
 <<<<<<< HEAD
-token = "1794885741:AAGBtWvALZjTzw1WDefzwSCie9ScpHmdHL0" #os.getenv("TOKEN") #
+token =  os.getenv("TOKEN") #"1794885741:AAGBtWvALZjTzw1WDefzwSCie9ScpHmdHL0"
 url = "https://e429ff1617fe.ngrok.io"
 =======
 token = "1693338559:AAFniq64i8lKTKVWjGdq9_9lDki1W4SK3X8"
