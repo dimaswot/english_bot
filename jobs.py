@@ -7,6 +7,7 @@ sched = BlockingScheduler()
 
 @sched.scheduled_job('interval', seconds=30)
 def print_interval():
+    print("ПРОИЗОШЛО НАПОМИНАНИЕ")
     session = Session()
     users = session.query(User).all()
     for user in users:
