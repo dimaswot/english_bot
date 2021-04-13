@@ -11,12 +11,7 @@ import os
 
 <<<<<<< HEAD
 token =  os.getenv("TOKEN") #"1794885741:AAGBtWvALZjTzw1WDefzwSCie9ScpHmdHL0"
-url = "https://e429ff1617fe.ngrok.io"
-=======
-token = "1693338559:AAFniq64i8lKTKVWjGdq9_9lDki1W4SK3X8"
 url = "https://english1bot.herokuapp.com/"
-CHAT_ID = 742632933
->>>>>>> ad061af1c22163f96e28023a8e80582304a5268f
 
 app = Flask(__name__)
 bot = TelBot(token)
