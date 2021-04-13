@@ -1,7 +1,8 @@
 from sqlalchemy import create_engine, Column, Integer, ForeignKey, String, DateTime
 from sqlalchemy.orm import sessionmaker, declarative_base, relationship
+import os
 
-engine = create_engine("postgres://dylvhcvruqtuvo:d685ee31d82bc085d821a2871bc274517c6234855f476781fa1d9ef66fe3dfb1@ec2-34-254-69-72.eu-west-1.compute.amazonaws.com:5432/dab8bbumauh2n4", echo=True)
+engine = create_engine(os.getenv("DATABASE_URL"), echo=True)
 
 # базовый деклоративный класс
 base = declarative_base()
