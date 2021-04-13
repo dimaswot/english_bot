@@ -7,9 +7,10 @@ from states import BEGIN, TEST, EXIT
 from theme import Words
 import random
 from datetime import datetime
-from user_bd import User, init_user, session, Word, Theme, Statistics
+from user_bd import User, init_user, Session,  Word, Theme, Statistics
 
 def test_first(update: Update, context: CallbackContext):
+    session = Session()
     user = init_user(update.callback_query.message.chat_id)
     user.last_repetition = datetime.utcnow()
     user.refresh()
@@ -57,6 +58,7 @@ def test_first(update: Update, context: CallbackContext):
     return TEST
 
 def test(update: Update, context: CallbackContext):
+    session = Session()
     raw_data = update.callback_query.data
     query_data = raw_data.split('_')
 
