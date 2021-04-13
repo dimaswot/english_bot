@@ -47,5 +47,5 @@ def shed(update, user:User):
     keyboard_markup = InlineKeyboardMarkup([
         [InlineKeyboardButton('Повторить', callback_data=str(REPIT))],
     ])
-    update.send_message(user.id, 'Пора бы наверное и повторить', reply_markup=keyboard_markup)
+    update.send_message(user.telegram_id, 'Пора бы наверное и повторить', reply_markup=keyboard_markup)
     return BEGIN
