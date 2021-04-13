@@ -2,7 +2,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CallbackContext
 from menu import start
 import states
-from user_bd import User, init_user, session, Word, Theme
+from user_bd import User, init_user, Session, Word, Theme
 
 
 def statistics(update: Update, context: CallbackContext):
