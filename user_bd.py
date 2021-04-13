@@ -1,14 +1,13 @@
 from sqlalchemy import create_engine, Column, Integer, ForeignKey, String, DateTime
-from sqlalchemy.orm import sessionmaker, declarative_base, relationship
-import os
+from sqlalchemy.orm import sessionmaker, declarative_base, relationship, scoped_session
 
-engine = create_engine("postgresql://dylvhcvruqtuvo:d685ee31d82bc085d821a2871bc274517c6234855f476781fa1d9ef66fe3dfb1@ec2-34-254-69-72.eu-west-1.compute.amazonaws.com:5432/dab8bbumauh2n4", echo=True)
+engine = create_engine("sqlite:///example.db", echo=True, connect_args={'check_same_thread': False})
 
 # базовый деклоративный класс
 base = declarative_base()
 
-Session = sessionmaker(engine)
-session = Session()
+Session = scoped_session(sessionmaker(bind=engine))
+
 
 
 class Statistics(base):
@@ -31,6 +30,7 @@ class User(base):
     count_learn_word = Column(Integer, default=0) #кол-во выученных слов
 
     def refresh(self):
+        session = Session()
         session.add(self)
         session.commit()
 
@@ -48,11 +48,13 @@ class Theme(base):
     words = relationship("Word")
 
     def add(self, word: Word):
+        session = Session()
         session.add(word)
         session.commit()
 
 
 def init_user(id):
+    session = Session()
     user = session.query(User).get(id)
     if not user:
         user = User()
