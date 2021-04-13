@@ -2,7 +2,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CallbackContext
 from datetime import datetime
 import json
-from states import BEGIN, THEME, TEST, SETTINGS, REDACT_KOL_VO, STOP_SCHEDULLER, STATISTICS
+from states import BEGIN, THEME, TEST, SETTINGS, REDACT_KOL_VO, STOP_SCHEDULLER, STATISTICS, REPIT
 from theme import Words
 from user_bd import User, init_user, Session, Word, Theme, Statistics
 from typing import List
@@ -38,6 +38,13 @@ def menu(update: Update, context: CallbackContext):
         [InlineKeyboardButton('Тест', callback_data=str(TEST))],
         [InlineKeyboardButton('Статистика', callback_data=str(STATISTICS))],
         [InlineKeyboardButton('Настройки', callback_data=str(SETTINGS))],
+    ])
+    update.callback_query.message.edit_text('Выберите пункт меню', reply_markup=keyboard_markup)
+    return BEGIN
+
+def shed(update:Update, context:CallbackContext):
+    keyboard_markup = InlineKeyboardMarkup([
+        [InlineKeyboardButton('Повторить', callback_data=str(REPIT))],
     ])
     update.callback_query.message.edit_text('Выберите пункт меню', reply_markup=keyboard_markup)
     return BEGIN
