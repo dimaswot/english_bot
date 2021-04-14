@@ -8,6 +8,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 from bot import TelBot
 from datetime import timedelta
 import os
+from user_bd import Session
 
 
 token =  os.getenv("TOKEN") #"1794885741:AAGBtWvALZjTzw1WDefzwSCie9ScpHmdHL0"
@@ -27,3 +28,11 @@ def set_webhook():
         f'{url}/{token}'
     )
     return 'ok'
+
+@app.route("/words")
+def give_words():
+    session = Session()
+    all_words = session.query(Word).all()
+    for word in all_words:
+        print(f'{word.word}\n')
+    return {"ok": True}
