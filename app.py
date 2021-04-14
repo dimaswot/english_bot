@@ -35,6 +35,7 @@ def give_words():
     session = Session()
     all_words = session.query(Word).all()
     for word in all_words:
-        str += f'{word.word}' + '\n'
+        str += f'{word.word}\n'
     return f'{str}'
+
 
