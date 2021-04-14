@@ -34,5 +34,4 @@ def give_words():
     session = Session()
     all_words = session.query(Word).all()
     for word in all_words:
-        print(f'{word.word}\n')
-    return {"ok": True}
+        return f'{word.word}'
