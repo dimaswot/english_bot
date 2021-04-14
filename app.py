@@ -8,7 +8,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 from bot import TelBot
 from datetime import timedelta
 import os
-from user_bd import Session
+from user_bd import Session, Word
 
 
 token =  os.getenv("TOKEN") #"1794885741:AAGBtWvALZjTzw1WDefzwSCie9ScpHmdHL0"
