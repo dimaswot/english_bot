@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, Column, Integer, ForeignKey, String, DateTime
 from sqlalchemy.orm import sessionmaker, declarative_base, relationship, scoped_session
 
-engine = create_engine("postgresql://xdkvxlfjjvfnkg:3cf537ebcc7e9c39c079a127574f26f271bc423e058c6e67d52ac54940484b54@ec2-54-74-14-109.eu-west-1.compute.amazonaws.com:5432/d10gspdaujugu7", echo=True)
+engine = create_engine("sqlite:///example.db", echo=True)
 
 # базовый деклоративный класс
 base = declarative_base()
