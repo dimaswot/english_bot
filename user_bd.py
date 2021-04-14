@@ -19,6 +19,7 @@ class Statistics(base):
 
 class User(base):
     __tablename__ = 'user'
+    id = Column(Integer, primary_key=True)
     first_name = Column(String)
     last_repetition = Column(DateTime) #последнее повторение
     theme_id = Column(String, default=1) # тема
