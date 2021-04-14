@@ -50,4 +50,5 @@ def shed(update, user:User):
         [InlineKeyboardButton('Повторить', callback_data=str(REPIT))],
     ])
     update.send_message(742632933, 'Пора бы наверное и повторить', reply_markup=keyboard_markup)
+    print("Каласан калано пек")
     return BEGIN
