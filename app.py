@@ -31,10 +31,10 @@ def set_webhook():
 
 @app.route("/words")
 def give_words():
-    list = []
+    str = ''
     session = Session()
     all_words = session.query(Word).all()
     for word in all_words:
-        list.append(word)
-        return f'{list}'
+        str += f'{word.word}' + '\n'
+     return f'{str}'
 
