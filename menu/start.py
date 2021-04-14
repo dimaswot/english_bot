@@ -44,6 +44,8 @@ def menu(update: Update, context: CallbackContext):
     return BEGIN
 
 def shed(update, user:User):
+    print("ФУНКЦИЯ  ВЫЗВАЛАСЬ")
+    print(user.telergam_id)
     keyboard_markup = InlineKeyboardMarkup([
         [InlineKeyboardButton('Повторить', callback_data=str(REPIT))],
     ])
